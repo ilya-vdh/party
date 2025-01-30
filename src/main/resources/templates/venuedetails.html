@@ -37,7 +37,23 @@
     </nav>
     <main class="m-3 container" th:object="${venue}">
         <h2 th:text="*{venueName}"></h2>
+        <p th:text="*{city}"></p>
         Zie <a th:href="@{linkMoreInfo}" th:text="${venue.linkMoreInfo}"></a>
+        <h3>Faciliteiten:</h3>
+        <div class="container w-lg-50 w-80">
+            <div class="row">
+                <p th:text="|max *{capacity} personen|" class="col-6 border"></p>
+                <p th:text="|*{distanceFromPublicTransportInKm} km van openbaar vervoer|" class="col-6 border"></p>
+            </div>
+            <div class="row">
+            <p th:text="' eten voorzien: ' + (${venue.isFoodProvided()} ? 'ja' : 'nee')" class="col-6 border"></p>
+            <p th:text="'binnen: ' + (${venue.isIndoor()} ? 'ja' : 'nee ')" class="col-6 border"></p>
+            </div>
+            <div class="row">
+            <p th:text="'buiten: ' + (${venue.isOutdoor()} ? 'ja' : 'nee')" class="col-6 border"></p>
+            <p th:text="'gratis parking: ' + (${venue.isFreeParkingAvailable()} ? 'ja' : 'nee')" class="col-6 border"></p>
+            </div>
+        </div>
     </main>
     <footer class="footer mt-auto pt-2 border-top text-center">
         ©ThomasMore
