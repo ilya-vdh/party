@@ -37,7 +37,7 @@
     </nav>
     <main class="m-3 container" th:object="${venue}">
         <h2 th:text="*{venueName}"></h2>
-        Zie <a th:href="@{linkMoreInfo}" th:text="${linkMoreInfo}"></a>
+        Zie <a th:href="@{linkMoreInfo}" th:text="${venue.linkMoreInfo}"></a>
     </main>
     <footer class="footer mt-auto pt-2 border-top text-center">
         ©ThomasMore
