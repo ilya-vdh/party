@@ -5,3 +5,7 @@ values (1, 'https://www.sportpaleis.be/en/calendar?venue=AS',
         'sportpaleis', 20, true, true,
         false, false, 'Antwerpen',
         15);
+INSERT INTO CLIENT (ID, NAME, NR_OF_ORDERS, TOTAL_AMOUNT,
+                    DISCOUNT_TAKEN)
+VALUES (1, 'Ilya', 5, 10,
+        2.1);
