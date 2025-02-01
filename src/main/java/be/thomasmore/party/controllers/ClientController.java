@@ -20,6 +20,17 @@ public class ClientController {
     @Autowired
     private ClientRepository clientRepository;
 
+    @GetMapping("/clientdetails")
+    public String clientDetails(Model model) {
+        Optional<Client> clientFromDb = clientRepository.findById(1);
+        if (clientFromDb.isPresent()) {
+            Client client = clientFromDb.get();
+            double discount = calculateDiscount(client.getTotalAmount()); // Bereken korting
+            model.addAttribute("discount", discount); // Voeg korting toe aan de view
+        }
+        clientFromDb.ifPresent(client -> model.addAttribute("client", client));
+        return "clientdetails";
+    }
     @GetMapping("/client")
     public String clientGreeting(Model model) {
         Optional<Client> clientFromDb = clientRepository.findById(1);
@@ -28,8 +39,11 @@ public class ClientController {
         return "client";
     }
 
-    public void calculateDiscount() {
-
+    public double calculateDiscount(double totalAmount) {
+        if (totalAmount < 50) {
+            return 0.0;
+        }
+        return totalAmount * 0.005;
     }
 
 
