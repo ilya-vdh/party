@@ -37,9 +37,9 @@
             </div>
         </div>
     </nav>
-    <main class="m-3" th:object="${client}">
+    <main class="m-3">
         <h1>Clientgreeting:</h1>
-        <p th:text="|*{groetingtovtijd()} allerliefste *{name}, jij bent een topper|"></p>
+        <p th:text="|*{clientmessage}|"></p>
     </main>
     <footer class="footer mt-auto pt-2 border-top text-center">
         ©ThomasMore

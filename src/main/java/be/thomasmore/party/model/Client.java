@@ -15,26 +15,6 @@ public class Client {
     private Double totalAmount;
     private Double discountTaken;
 
-    public String groetingtovtijd(){
-        LocalTime now = LocalTime.now();
-        LocalTime noon = LocalTime.NOON;
-        LocalTime vijfuur = LocalTime.of(17, 0);
-        LocalTime tweeentwintiguur = LocalTime.of(22, 0);
-        LocalTime zesuur = LocalTime.of(6, 0);
-        if (now.isBefore(noon) && now.isAfter(zesuur)) {
-            return "Goedemorgen";
-        }
-        if (now.isAfter(noon) && now.isBefore(vijfuur)) {
-            return "Goedemiddag";
-        }
-        if (now.isAfter(vijfuur) && now.isBefore(tweeentwintiguur)) {
-            return "Goedenavond";
-        }
-        if (now.isAfter(tweeentwintiguur) && now.isBefore(zesuur)) {
-            return "Goedennacht";
-        }
-        return "";
-    }
 
     public Integer getId() {
         return id;

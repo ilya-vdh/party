@@ -7,5 +7,5 @@ values (1, 'https://www.sportpaleis.be/en/calendar?venue=AS',
         15);
 INSERT INTO CLIENT (ID, NAME, NR_OF_ORDERS, TOTAL_AMOUNT,
                     DISCOUNT_TAKEN)
-VALUES (1, 'Ilya', 5, 10,
+VALUES (1, 'Ilya', 80, 10,
         2.1);
