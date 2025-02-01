@@ -13,7 +13,7 @@ import java.util.Optional;
 public class ClientController {
     @Autowired
     private ClientRepository clientRepository;
-    @GetMapping("/clientgreeting")
+    @GetMapping("/client")
     public String clientGreeting(Model model){
         Optional<Client> clientFromDb = clientRepository.findById(1);
         clientFromDb.ifPresent(client -> model.addAttribute("client", client));
