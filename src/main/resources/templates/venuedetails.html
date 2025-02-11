@@ -32,7 +32,7 @@
                         <a class="nav-link" th:href="@{/client}">client</a>
                     </li>
                     <li>
-                        <a class="nav-link"th:href="@{/clientdetails}">clientdetails</a>
+                        <a class="nav-link" th:href="@{/clientdetails}">clientdetails</a>
                     </li>
                 </ul>
                 <span class="navbar-text">
@@ -52,12 +52,13 @@
                 <p th:text="|*{distanceFromPublicTransportInKm} km van openbaar vervoer|" class="col-6 border"></p>
             </div>
             <div class="row">
-            <p th:text="' eten voorzien: ' + (*{isFoodProvided()} ? 'ja' : 'nee')" class="col-6 border"></p>
-            <p th:text="'binnen: ' + (*{isIndoor()} ? 'ja' : 'nee ')" class="col-6 border"></p>
+                <p th:if="*{isFoodProvided()}"  class="col-6 border">eten is voorzien</p>
+                <p th:if="*{indoor && outdoor}"  class="col-6 border">binnen en buiten</p>
             </div>
             <div class="row">
-            <p th:text="'buiten: ' + (*{isOutdoor()} ? 'ja' : 'nee')" class="col-6 border"></p>
-            <p th:text="'gratis parking: ' + (*{isFreeParkingAvailable()} ? 'ja' : 'nee')" class="col-6 border"></p>
+                <p th:if="*{indoor and not outdoor}" class="col-6 border">indoor</p>
+                <p th:if="*{outdoor and not indoor}" class="col-6 border">outdoor</p>
+                <p th:if="*{isFreeParkingAvailable()}" class="col-6 border">gratis parking</p>
             </div>
         </div>
     </main>
