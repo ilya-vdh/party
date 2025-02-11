@@ -26,7 +26,7 @@
                         <a class="nav-link" aria-current="page" th:href="@{/about}">Over mij</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" th:href="@{zaaldetails}">zaaldetails</a>
+                        <a class="nav-link active" aria-current="page" th:href="@{/zaaldetails}">zaaldetails</a>
                     </li>
                     <li>
                         <a class="nav-link" th:href="@{/client}">client</a>
@@ -41,7 +41,7 @@
             </div>
         </div>
     </nav>
-    <main class="m-3 container" th:object="${venue}">
+    <main class="m-3 container" th:object="${venue}" th:if="${venue}">
         <h2 th:text="*{venueName}"></h2>
         <p th:text="*{city}"></p>
         Zie <a th:href="*{linkMoreInfo}" th:text="*{linkMoreInfo}" target="_blank"></a>
@@ -60,6 +60,9 @@
             <p th:text="'gratis parking: ' + (*{isFreeParkingAvailable()} ? 'ja' : 'nee')" class="col-6 border"></p>
             </div>
         </div>
+    </main>
+    <main class="m-3 container" th:object="${venue}" th:unless="${venue}">
+        <p>geen geldige zaal gekozen</p>
     </main>
     <footer class="footer mt-auto pt-2 border-top text-center">
         ©ThomasMore

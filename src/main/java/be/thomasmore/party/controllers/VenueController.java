@@ -15,10 +15,15 @@ public class VenueController {
     @Autowired
     private VenueRepository venueRepository;
 
-    @GetMapping("/venuedetails/{id}")
-    public String venue(Model model, @PathVariable int id) {
+    @GetMapping({"/venuedetails/{id}", "/venuedetails"})
+    public String venue(Model model, @PathVariable(required = false) Integer id) {
+        if (id == null) {
+            return "venuedetails";
+        }
         Optional<Venue> venueFromDb = venueRepository.findById(id);
-        venueFromDb.ifPresent(venue -> model.addAttribute("venue", venue));
+        if (venueFromDb.isPresent()) {
+            model.addAttribute("venue", venueFromDb.get());
+        }
         return "venuedetails";
     }
 
