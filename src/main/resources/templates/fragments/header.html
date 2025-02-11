@@ -1,0 +1,30 @@
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark" th:fragment="navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand text-warning ms-1" href="#">It's Party Time!!</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/home}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  th:href="@{/about}">Over mij</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/zaaldetails}">zaaldetails</a>
+                </li>
+                <li>
+                    <a class="nav-link" th:href="@{/client}">client</a>
+                </li>
+                <li>
+                    <a class="nav-link active" aria-current="page" th:href="@{/clientdetails}">clientdetails</a>
+                </li>
+            </ul>
+            <span class="navbar-text">
+        Navbar text with an inline element
+      </span>
+        </div>
+    </div>
+</nav>
