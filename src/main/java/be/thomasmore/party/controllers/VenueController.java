@@ -17,12 +17,26 @@ public class VenueController {
 
     @GetMapping({"/venuedetails/{id}", "/venuedetails"})
     public String venue(Model model, @PathVariable(required = false) Integer id) {
-        if (id == null) {
-            return "venuedetails";
+        int previd = id;
+        int nextid = id;
+        if (id == 1) {
+            nextid = id + 1;
+            previd = (int) venueRepository.count();
         }
+        if (id == venueRepository.count()) {
+            nextid = 1;
+            previd = id -1;
+        }
+        if (id > 1 && id < venueRepository.count()) {
+            previd = id - 1;
+            nextid = id + 1;
+        }
+
         Optional<Venue> venueFromDb = venueRepository.findById(id);
         if (venueFromDb.isPresent()) {
             model.addAttribute("venue", venueFromDb.get());
+            model.addAttribute("previd", previd);
+            model.addAttribute("nextid", nextid);
         }
         return "venuedetails";
     }

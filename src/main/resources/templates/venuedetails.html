@@ -5,6 +5,19 @@
 <div class="container-fluid mx-0 px-0">
     <div th:replace="~{fragments/header :: navbar}"></div>
     <main class="m-3 container" th:object="${venue}" th:if="${venue}">
+        <div class="d-flex justify-content-between mt-4">
+            <!-- Vorige knop -->
+            <a th:if="${previd != null}" th:href="@{|/venuedetails/${previd}|}" class="btn btn-primary">
+                ← Vorige
+            </a>
+
+
+            <!-- Volgende knop -->
+            <a th:if="${nextid != null}" th:href="@{|/venuedetails/${nextid}|}" class="btn btn-primary">
+                Volgende →
+            </a>
+        </div>
+
         <h2 th:text="*{venueName}"></h2>
         <p th:text="*{city}"></p>
         Zie <a th:href="*{linkMoreInfo}" th:text="*{linkMoreInfo}" target="_blank"></a>

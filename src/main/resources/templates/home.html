@@ -5,8 +5,9 @@
 <div class="container-fluid mx-0 px-0">
     <div th:replace="~{fragments/header :: navbar}"></div>
     <main class="m-3">
-        <h1>Hello</h1>
-        <p th:text="${myCalculatedValue}">myCalculatedValue</p>
+        <div class="container-fluid px-5 p-top-3"
+             th:style="|background-image: url(@{/img/party-image.jpg}); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 90%;|">
+        </div>
 
     </main>
     <footer th:replace="~{fragments/header :: footerelement}"></footer>
