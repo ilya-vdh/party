@@ -29,18 +29,8 @@ public class VenueController {
 
     @GetMapping("/zaaldetails")
     public String venueList(Model model) {
-        Optional<Venue> venueFromDb1 = venueRepository.findById(1);
-        if (venueFromDb1.isPresent()) {
-            model.addAttribute("venue1", venueFromDb1.get());
-        }
-        Optional<Venue> venueFromDb2 = venueRepository.findById(2);
-        if (venueFromDb2.isPresent()) {
-            model.addAttribute("venue2", venueFromDb2.get());
-        }
-        Optional<Venue> venueFromDb3 = venueRepository.findById(3);
-        if (venueFromDb3.isPresent()) {
-            model.addAttribute("venue3", venueFromDb3.get());
-        }
+        final Iterable<Venue> allvenues = venueRepository.findAll();
+        model.addAttribute("venues", allvenues);
         return "zaaldetails";
     }
 }
