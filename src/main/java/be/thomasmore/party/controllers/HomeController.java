@@ -4,6 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+
 @Controller
 public class HomeController {
     @GetMapping({"/","/home"})
@@ -25,5 +28,26 @@ public class HomeController {
         return "about";
     }
 
+    @GetMapping("/pay")
+    public String pay(Model model) {
+        String weekendzin = weekendzin();
+        model.addAttribute("weekendzin", weekendzin);
+        return "pay";
+    }
 
+    public boolean ishetWeekendofniet(){
+        DayOfWeek today = LocalDate.now().getDayOfWeek();
+        if (today == DayOfWeek.SATURDAY || today == DayOfWeek.SUNDAY){
+            return true;
+        }
+        return false;
+    }
+
+    public String weekendzin(){
+        boolean weekendofniet = ishetWeekendofniet();
+        if (weekendofniet){
+            return "Prettig weekend, je hebt het verdient!";
+        }
+        return "Voor je het weet is het weekend!";
+    }
 }
