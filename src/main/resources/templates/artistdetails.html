@@ -2,17 +2,17 @@
 <html lang="en">
 <head th:replace="~{fragments/header :: headerelement}"></head>
 <body class="home">
-<div class="container-fluid mx-0 px-0 row">
+<div class="container-fluid mx-0 px-0">
     <div th:replace="~{fragments/header :: navbar}"></div>
-    <main>
-        <div th:each="venue: ${venues}" class="card-group col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-            <div class="card m-1 p-2 text-center"  >
-            <a th:href="@{|/venuedetails/${venue.id}|}">
-                <h3 th:text="${venue.venueName}"></h3>
-            </a>
-
-            </div>
-        </div>
+    <main class="m-3 container" th:object="${artist}" th:if="${artist}">
+        <h2 th:text="*{artistName}"></h2>
+        <h3 th:text="*{genre}"></h3>
+        <p th:text="*{portfolio}"></p>
+        <p th:text="*{bio}" class="col-6 border">bio</p>
+        <a th:href="*{linkMoreInfo}" th:text="*{linkMoreInfo}" target="_blank"></a>
+    </main>
+    <main class="m-3 container" th:object="${venue}" th:unless="${venue}">
+        <p>geen geldige zaal gekozen</p>
     </main>
     <footer th:replace="~{fragments/header :: footerelement}"></footer>
 </div>
