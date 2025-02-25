@@ -5,7 +5,17 @@
 <div class="container-fluid mx-0 px-0 row">
   <div th:replace="~{fragments/header :: navbar}"></div>
   <main>
-    <div th:each="artist: ${artists}" class="col-2">
+    <h1>artiesten</h1>
+    <form th:action="@{/artistlist}">
+      <div class="input-group">
+        <input type="text" aria-label="keyword" name="keyword" step="1"
+               class="form-control" placeholder="zoek artist" th:value="${param.keyword}">
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+      </div>
+    </form>
+    <div th:each="artist: ${allartists}" class="col-2">
       <div class="card m-1 p-2 text-center"  >
         <a th:href="@{|/artistdetails/${artist.id}|}">
           <h3 th:text="${artist.artistName}"></h3>

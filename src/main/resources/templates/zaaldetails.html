@@ -2,15 +2,190 @@
 <html lang="en">
 <head th:replace="~{fragments/header :: headerelement}"></head>
 <body class="home">
-<div class="container-fluid mx-0 px-0 row">
+<div class="container-fluid mx-0 px-0">
     <div th:replace="~{fragments/header :: navbar}"></div>
     <main>
-        <div th:each="venue: ${venues}" class="card-group col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-            <div class="card m-1 p-2 text-center"  >
-            <a th:href="@{|/venuedetails/${venue.id}|}">
-                <h3 th:text="${venue.venueName}"></h3>
-            </a>
+        <div class="container mt-5">
+            <p th:text="|*{aantalvenues} aantal zalen gevonden|">aantalvenues</p>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Filter
+            </button>
 
+            <!-- Modal -->
+            <div class="modal fade" data-bs-theme="dark" id="exampleModal" tabindex="-1"
+                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <form th:action="@{/venuelist}">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row border rounded mt-3">
+                                    <div class="col-12 p-1">
+                                        <h5>Capacity</h5>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="input-group">
+                                            <input type="number" aria-label="minimum capacity" name="minCapacity"
+                                                   step="1"
+                                                   class="form-control" placeholder="Minimum Capacity"
+                                                   th:value="${param.minCapacity}">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">Persons</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="input-group">
+                                            <input type="number" aria-label="maximum capacity" name="maxCapacity"
+                                                   step="1"
+                                                   class="form-control" placeholder="Maximum Capacity"
+                                                   th:value="${param.maxCapacity}">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">Persons</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row border rounded mt-3">
+                                    <div class="col-12 p-1">
+                                        <h5>Max distance in kilometers</h5>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="input-group">
+                                            <input type="number" aria-label="distanceToPublicTransportInKm"
+                                                   name="distanceToPublicTransportInKm" step="1"
+                                                   class="form-control" placeholder="distanceToPublicTransportInKm"
+                                                   th:value="${param.distanceToPublicTransportInKm}">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">km</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row border rounded mt-3">
+                                    <div class="col-4">
+                                        <div class="input-group p-2 ">
+                                            <div class="input-group-text">
+                                                <input type="radio" name="filterFood" value=""
+                                                       class="form-check-input mt-0" aria-label="eten ja"
+                                                       th:checked="${param.filterFood==null}">
+                                            </div>
+                                            <div class="input-group-text">alles</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="input-group p-1 ">
+                                            <div class="input-group-text">
+                                                <input type="radio" name="filterFood" value="true"
+                                                       class="form-check-input mt-0" aria-label="eten ja"
+                                                       th:checked="${param.filterFood==true}">
+                                            </div>
+                                            <div class="input-group-text">ja</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="input-group p-1 ">
+                                            <div class="input-group-text">
+                                                <input type="radio" name="filterFood" value="false"
+                                                       class="form-check-input mt-0" aria-label="eten nee"
+                                                       th:checked="${param.filterFood==false}">
+                                            </div>
+                                            <div class="input-group-text">nee</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row border rounded mt-3">
+                                    <!-- Indoor -->
+                                    <div class="col-4">
+                                        <div class="input-group p-2">
+                                            <div class="input-group-text">
+                                                <input type="radio" name="filterIndoor" value=""
+                                                       class="form-check-input mt-0" aria-label="indoor alles"
+                                                       th:checked="${param.filterIndoor == null}">
+                                            </div>
+                                            <div class="input-group-text">alles</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="input-group p-1">
+                                            <div class="input-group-text">
+                                                <input type="radio" name="filterIndoor" value="true"
+                                                       class="form-check-input mt-0" aria-label="indoor ja"
+                                                       th:checked="${param.filterIndoor == 'true'}">
+                                            </div>
+                                            <div class="input-group-text">ja</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="input-group p-1">
+                                            <div class="input-group-text">
+                                                <input type="radio" name="filterIndoor" value="false"
+                                                       class="form-check-input mt-0" aria-label="indoor nee"
+                                                       th:checked="${param.filterIndoor == 'false'}">
+                                            </div>
+                                            <div class="input-group-text">nee</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Outdoor -->
+                                    <div class="col-4 mt-3">
+                                        <div class="input-group p-2">
+                                            <div class="input-group-text">
+                                                <input type="radio" name="filterOutdoor" value=""
+                                                       class="form-check-input mt-0" aria-label="outdoor alles"
+                                                       th:checked="${param.filterOutdoor == null}">
+                                            </div>
+                                            <div class="input-group-text">alles</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 mt-3">
+                                        <div class="input-group p-1">
+                                            <div class="input-group-text">
+                                                <input type="radio" name="filterOutdoor" value="true"
+                                                       class="form-check-input mt-0" aria-label="outdoor ja"
+                                                       th:checked="${param.filterOutdoor == 'true'}">
+                                            </div>
+                                            <div class="input-group-text">ja</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 mt-3">
+                                        <div class="input-group p-1">
+                                            <div class="input-group-text">
+                                                <input type="radio" name="filterOutdoor" value="false"
+                                                       class="form-check-input mt-0" aria-label="outdoor nee"
+                                                       th:checked="${param.filterOutdoor == 'false'}">
+                                            </div>
+                                            <div class="input-group-text">nee</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div th:each="venue: ${venues}" class="col-4">
+                    <a th:href="@{|/venuedetails/${venue.id}|}" class="card-group">
+                        <div class="card m-1 p-2 text-center">
+                            <h3 th:text="${venue.venueName}"></h3>
+                            <p th:text="*{venue.capacity}">venue.capacity</p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </main>
