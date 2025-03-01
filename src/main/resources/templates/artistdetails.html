@@ -19,10 +19,20 @@
         <p th:text="*{portfolio}"></p>
         <p th:text="*{bio}" class="col-6 border">bio</p>
         <a th:href="*{linkMoreInfo}" th:text="*{linkMoreInfo}" target="_blank"></a>
+        <div class="container mt-5">
+            <div class="row">
+                <div th:each="party : ${artist.parties}" class="col-4">
+                    <div class="card-group">
+                        <div class="card m-1 p-2 text-center">
+                            <h3 th:text="${party.name}"></h3>
+                            <p th:text="${party.date}"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
-    <main class="m-3 container" th:object="${venue}" th:unless="${venue}">
-        <p>geen geldige zaal gekozen</p>
-    </main>
+
     <footer th:replace="~{fragments/header :: footerelement}"></footer>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

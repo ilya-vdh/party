@@ -37,6 +37,19 @@
                 <p th:if="*{isFreeParkingAvailable()}" class="col-6 border">gratis parking</p>
             </div>
         </div>
+        <h1 th:text="|parties in *{venueName}|"></h1>
+        <div class="container mt-5">
+            <div class="row">
+                <div th:each="party : ${venue.parties}" class="col-4">
+                    <a th:href="@{|/partydetails/${party.id}|}" class="card-group">
+                        <div class="card m-1 p-2 text-center">
+                            <h3 th:text="${party.name}"></h3>
+                            <p th:text="${party.date}"></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
     </main>
     <main class="m-3 container" th:object="${venue}" th:unless="${venue}">
         <p>geen geldige zaal gekozen</p>

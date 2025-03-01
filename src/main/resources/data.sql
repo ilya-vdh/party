@@ -157,3 +157,75 @@ VALUES (
 Dreamville, MnM Start to Dj Finalist Flowtrack Summer Camp Casa Blanca
 Festival Sunrise Festival Red ''n Blue Café Local Noxx Publik Vice Festival
 KdG TD ...');
+
+INSERT INTO PARTY
+(ID, name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
+ venue_Id)
+VALUES (1, 'Big Spring Party', 6, 10, '1 cocktail included',
+        '2025-03-21', '10:00', 1);
+INSERT INTO PARTY
+(ID, name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
+ venue_Id)
+VALUES (2, 'Liberty 2022', 4, 6, 'free vestiaire, viplounge',
+        '2025-04-19', '22:00', 2);
+INSERT INTO PARTY
+(ID, name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
+ venue_Id)
+VALUES (3, 'Uppercuts', null, null, ' ',
+        '2022-03-16', '21:00', 4);
+INSERT INTO PARTY
+(ID, name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
+ venue_Id)
+VALUES (4, 'Zoetzuur', null, null, 'Zoete house / Zure techno',
+        '2025-05-03', '21:00', 4);
+INSERT INTO PARTY
+(ID, name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
+ venue_Id)
+VALUES (5, 'Oldies but Goldies', null, null, 'afterparty@home van THE
+BOX!',
+        '2025-04-25', '21:00', 4);
+INSERT INTO PARTY
+(ID, name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
+ venue_Id)
+VALUES (6, 'Sapphire Soiree', 45, 45,
+        'JCI Mechelen bestaat 45 jaar! En dat saffieren jubileum vieren we
+       graag in stijl met een galabal in Kasteel Tivoli. En jij kan erbij zijn!',
+        '2025-03-26', '21:00', 10);
+INSERT INTO party (id, name, price_Presale_In_Eur, price_In_Eur, extra_Info, date, doors, venue_Id)
+VALUES (7, 'Party Name', 10, 15, 'Some extra info', '2024-06-01', '20:00:00', 1);
+
+INSERT INTO party (id, name, price_Presale_In_Eur, price_In_Eur, extra_Info, date, doors, venue_id)
+VALUES (8, 'Summer Festival', 12, 18, 'Biggest summer party', '2024-08-15', '19:00:00', 1);
+
+-- Tussenliggende tabel voor de Many-to-Many relatie tussen Animal en Party
+
+
+
+INSERT INTO PARTY_ARTISTS (PARTIES_ID, ARTISTS_ID) VALUES (1, 1);
+INSERT INTO PARTY_ARTISTS (PARTIES_ID, ARTISTS_ID) VALUES (1, 2);
+INSERT INTO PARTY_ARTISTS (PARTIES_ID, ARTISTS_ID) VALUES (2, 2);
+INSERT INTO PARTY_ARTISTS (PARTIES_ID, ARTISTS_ID) VALUES (3, 3);
+INSERT INTO PARTY_ARTISTS (PARTIES_ID, ARTISTS_ID) VALUES (3, 5);
+INSERT INTO PARTY_ARTISTS (PARTIES_ID, ARTISTS_ID) VALUES (4, 5);
+
+-- Voeg 8 dieren toe aan de database
+INSERT INTO animal (id, animalname, city, bio) VALUES (1, 'Lion', 'Amsterdam', 'King of the Jungle');
+INSERT INTO animal (id, animalname, city, bio) VALUES (2, 'Eagle', 'Rotterdam', 'Sharp-sighted bird');
+INSERT INTO animal (id, animalname, city, bio) VALUES (3, 'Dolphin', 'Den Haag', 'Intelligent sea creature');
+INSERT INTO animal (id, animalname, city, bio) VALUES (4, 'Wolf', 'Utrecht', 'Loyal and wild hunter');
+INSERT INTO animal (id, animalname, city, bio) VALUES (5, 'Panda', 'Arnhem', 'Loves bamboo and sleeping');
+INSERT INTO animal (id, animalname, city, bio) VALUES (6, 'Kangaroo', 'Eindhoven', 'Jumps high and loves boxing');
+INSERT INTO animal (id, animalname, city, bio) VALUES (7, 'Owl', 'Groningen', 'Wise and nocturnal');
+INSERT INTO animal (id, animalname, city, bio) VALUES (8, 'Cheetah', 'Maastricht', 'Fastest land animal');
+
+INSERT INTO animal_parties (parties_id, animals_id) VALUES (1, 1);
+INSERT INTO animal_parties (parties_id, animals_id) VALUES (2, 2);
+INSERT INTO animal_parties (parties_id, animals_id) VALUES (3, 3);
+INSERT INTO animal_parties (parties_id, animals_id) VALUES (4, 4);
+INSERT INTO animal_parties (parties_id, animals_id) VALUES (5, 1);
+INSERT INTO animal_parties (parties_id, animals_id) VALUES (6, 2);
+INSERT INTO animal_parties (parties_id, animals_id) VALUES (7, 4);
+INSERT INTO animal_parties (parties_id, animals_id) VALUES (8, 1);
+INSERT INTO animal_parties (parties_id, animals_id) VALUES (3, 4);
+INSERT INTO animal_parties (parties_id, animals_id) VALUES (5, 3);
+INSERT INTO animal_parties (parties_id, animals_id) VALUES (8, 2);
