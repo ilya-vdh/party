@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/header :: headerelement}"></head>
+<body class="home">
+<div class="container-fluid mx-0 px-0" th:object="${party}" th:if="${party}">
+    <div th:replace="~{fragments/header :: navbar}"></div>
+    <h1 th:text="*{name}"></h1>
+    <a class="btn btn-primary" th:href="@{|/partydetails/${id}|}">Cancel edit</a>
+
+    <main class="m-3 container">
+        <p th:text="|*{date} in |" th:href="@{|/venuedetails/*{venue.id}|}">
+        <p th:text="*{venue.venueName}"></p>
+        </p>
+        <form th:action="@{|/admin/partyedit/*{id}|}" method="post">
+            <p>naam</p>
+            <div class="input-group">
+                <input type="text" aria-label="name" name="name" step="1"
+                       class="form-control" placeholder="partyName" th:value="${party.name}">
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <p> prijs voorverkoop</p>
+                    <div class="input-group">
+                        <input type="number" aria-label="priceInEur" name="priceInEur" step="1"
+                               class="form-control" placeholder="price" th:value="${party.priceInEur}">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <p>prijs aan de kassa</p>
+                    <div class="input-group">
+                        <input type="number" aria-label="pricePresaleInEur" name="pricePresaleInEur" step="1"
+                               class="form-control" placeholder="price" th:value="${party.pricePresaleInEur}">
+                    </div>
+                </div>
+            </div>
+            <p>extra info</p>
+            <div class="input-group">
+                <input type="text" aria-label="extraInfo" name="extraInfo" step="1"
+                       class="form-control" placeholder="extra info" th:value="${party.extraInfo}">
+            </div>
+            <div class="input-group">
+                <input type="date" aria-label="date" name="date" step="1"
+                       class="form-control" placeholder="04/03/2025" th:value="${party.date}">
+            </div>
+            <div class="input-group">
+                <input type="time" aria-label="doors" name="doors" step="1"
+                       class="form-control" placeholder="00:00" th:value="${party.doors}">
+            </div>
+            <div>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+            <div class="mb-3">
+                <select id="venue" name="venue" class="form-select">
+                    <option value="">Selecteer een locatie</option>
+                    <option th:each="venue : ${venues}"
+                            th:value="${venue.id}"
+                            th:text="${venue.venueName}"
+                            th:selected="${venue.id == party.venue.id}">
+                    </option>
+                </select>
+            </div>
+
+        </form>
+
+    </main>
+    <footer th:replace="~{fragments/header :: footerelement}"></footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

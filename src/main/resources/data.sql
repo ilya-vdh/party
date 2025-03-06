@@ -1,90 +1,90 @@
-INSERT INTO CLIENT (ID, NAME, NR_OF_ORDERS, TOTAL_AMOUNT,
+INSERT INTO CLIENT ( NAME, NR_OF_ORDERS, TOTAL_AMOUNT,
                     DISCOUNT_TAKEN)
-VALUES (1, 'Ilya', 80, 240,
+VALUES ( 'Ilya', 80, 240,
         2.1);
 insert into VENUE (
-    ID, VENUE_NAME, LINK_MORE_INFO, CAPACITY,
+     VENUE_NAME, LINK_MORE_INFO, CAPACITY,
     FOOD_PROVIDED, INDOOR, OUTDOOR, FREE_PARKING_AVAILABLE,
     CITY, DISTANCE_FROM_PUBLIC_TRANSPORT_IN_KM)
 values (
-           1, 'De Club', 'https://transitm.mechelen.be/de-club',
+            'De Club', 'https://transitm.mechelen.be/de-club',
            150, false, true, false, true, 'Mechelen', 2);
 insert into VENUE (
-    ID, VENUE_NAME, LINK_MORE_INFO, CAPACITY,
+     VENUE_NAME, LINK_MORE_INFO, CAPACITY,
     FOOD_PROVIDED, INDOOR, OUTDOOR, FREE_PARKING_AVAILABLE,
     CITY, DISTANCE_FROM_PUBLIC_TRANSPORT_IN_KM)
 values (
-           2, 'De Loods', 'https://transitm.mechelen.be/de-loods',
+            'De Loods', 'https://transitm.mechelen.be/de-loods',
            1000, false, true, false, true, 'Mechelen', 2);
 insert into VENUE (
-    ID, VENUE_NAME, LINK_MORE_INFO, CAPACITY,
+     VENUE_NAME, LINK_MORE_INFO, CAPACITY,
     FOOD_PROVIDED, INDOOR, OUTDOOR, FREE_PARKING_AVAILABLE,
     CITY, DISTANCE_FROM_PUBLIC_TRANSPORT_IN_KM)
 values (
-           3, 'Zapoi', 'https://www.facebook.com/KafeeZapoi/',
+            'Zapoi', 'https://www.facebook.com/KafeeZapoi/',
            150, true, true, false, false, 'Mechelen', 4);
 insert into VENUE (
-    ID, VENUE_NAME, LINK_MORE_INFO, CAPACITY,
+     VENUE_NAME, LINK_MORE_INFO, CAPACITY,
     FOOD_PROVIDED, INDOOR, OUTDOOR, FREE_PARKING_AVAILABLE,
     CITY, DISTANCE_FROM_PUBLIC_TRANSPORT_IN_KM)
 values (
-           4, 'De Kuub', 'http://www.dekuub.be',
+            'De Kuub', 'http://www.dekuub.be',
            150, true, true, true, false, 'Mechelen', 4);
 insert into VENUE (
-    ID, VENUE_NAME, LINK_MORE_INFO, CAPACITY,
+     VENUE_NAME, LINK_MORE_INFO, CAPACITY,
     FOOD_PROVIDED, INDOOR, OUTDOOR, FREE_PARKING_AVAILABLE,
     CITY, DISTANCE_FROM_PUBLIC_TRANSPORT_IN_KM)
 values (
-           5, 't''Ile Maline', 'https://www.tilemalines.be',
+            't''Ile Maline', 'https://www.tilemalines.be',
            400, true, true, true, false, 'Mechelen', 6);
 insert into VENUE (
-    ID, VENUE_NAME, LINK_MORE_INFO, CAPACITY,
+     VENUE_NAME, LINK_MORE_INFO, CAPACITY,
     FOOD_PROVIDED, INDOOR, OUTDOOR, FREE_PARKING_AVAILABLE,
     CITY, DISTANCE_FROM_PUBLIC_TRANSPORT_IN_KM)
 values (
-           6, 'Nekkerhal',
+         'Nekkerhal',
            'https://www.nekkerhalbrusselsnorth.com/nl/organiseer/hal/',
            8800, false, true, false, true, 'Mechelen', 4);
 insert into VENUE (
-    ID, VENUE_NAME, LINK_MORE_INFO, CAPACITY,
+     VENUE_NAME, LINK_MORE_INFO, CAPACITY,
     FOOD_PROVIDED, INDOOR, OUTDOOR, FREE_PARKING_AVAILABLE,
     CITY, DISTANCE_FROM_PUBLIC_TRANSPORT_IN_KM)
 values (
-           7, 'Nekkerbox',
+            'Nekkerbox',
            'https://www.nekkerhalbrusselsnorth.com/nl/organiseer/nekkerbox/',
            2500, false, true, false, true, 'Mechelen', 4);
 insert into VENUE (
-    ID, VENUE_NAME, LINK_MORE_INFO, CAPACITY,
+    VENUE_NAME, LINK_MORE_INFO, CAPACITY,
     FOOD_PROVIDED, INDOOR, OUTDOOR, FREE_PARKING_AVAILABLE,
     CITY, DISTANCE_FROM_PUBLIC_TRANSPORT_IN_KM)
 values (
-           8, 'Lamot', 'http://lamot-mechelen.be/',
+            'Lamot', 'http://lamot-mechelen.be/',
            300, true, true, true, false, 'Mechelen', 3);
 insert into VENUE (
-    ID, VENUE_NAME, LINK_MORE_INFO, CAPACITY,
+     VENUE_NAME, LINK_MORE_INFO, CAPACITY,
     FOOD_PROVIDED, INDOOR, OUTDOOR, FREE_PARKING_AVAILABLE,
     CITY, DISTANCE_FROM_PUBLIC_TRANSPORT_IN_KM)
 values (
-           9, 'Passade', 'https://www.passade.be/nl/feestzaal-mechelen',
+            'Passade', 'https://www.passade.be/nl/feestzaal-mechelen',
            150, true, true, true, true, 'Mechelen', 2);
 insert into VENUE (
-    ID, VENUE_NAME, LINK_MORE_INFO, CAPACITY,
+     VENUE_NAME, LINK_MORE_INFO, CAPACITY,
     FOOD_PROVIDED, INDOOR, OUTDOOR, FREE_PARKING_AVAILABLE,
     CITY, DISTANCE_FROM_PUBLIC_TRANSPORT_IN_KM)
 values (
-           10, 'Tivoli', 'https://www.kasteeltivoli.be/locatie',
+            'Tivoli', 'https://www.kasteeltivoli.be/locatie',
            500, true, true, true, true, 'Mechelen', 8);
 insert into VENUE (
-    ID, VENUE_NAME, LINK_MORE_INFO, CAPACITY,
+     VENUE_NAME, LINK_MORE_INFO, CAPACITY,
     FOOD_PROVIDED, INDOOR, OUTDOOR, FREE_PARKING_AVAILABLE,
     CITY, DISTANCE_FROM_PUBLIC_TRANSPORT_IN_KM)
 values (
-           11, 'Kruidtuin', 'https://www.mechelen.be/kruidtuin',
+            'Kruidtuin', 'https://www.mechelen.be/kruidtuin',
            500, false, false, true, false, 'Mechelen', 1);
 INSERT INTO ARTIST (
-    ID, ARTIST_NAME, BIO, GENRE, LINK_MORE_INFO, PORTFOLIO)
+     ARTIST_NAME, BIO, GENRE, LINK_MORE_INFO, PORTFOLIO)
 VALUES (
-           1, 'Discobaar a moeder',
+            'Discobaar a moeder',
            'Discobaar A Moeder, een ondertussen legendarisch Antwerps fenomeen,
           draait al mee van in 2002. Het begon als een cafégrap van twee bevriende
           vinylfreaks, de grap houden ze er in, van draaien in een café genieten ze
@@ -92,24 +92,24 @@ VALUES (
            'Pop, Soul, Disco', 'http://www.discobaaramoeder.be/', 'Lotto Arena
 6/03/2020');
 INSERT INTO ARTIST (
-    ID, ARTIST_NAME, BIO, GENRE, LINK_MORE_INFO, PORTFOLIO)
+     ARTIST_NAME, BIO, GENRE, LINK_MORE_INFO, PORTFOLIO)
 VALUES (
-           2, 'Radio Botanique', 'Radio Botanique: helemaal geen radio. Eigenlijk
+            'Radio Botanique', 'Radio Botanique: helemaal geen radio. Eigenlijk
 gewoon een discobaar. Vaste Parkpop (Mechelen) dansers en swingers.',
            'voor de lol', 'https://www.facebook.com/radiobotanique/', 'bekend van
 Parkpop');INSERT INTO ARTIST (
-    ID, ARTIST_NAME, BIO, GENRE, LINK_MORE_INFO, PORTFOLIO)
+     ARTIST_NAME, BIO, GENRE, LINK_MORE_INFO, PORTFOLIO)
           VALUES (
-                     3, 'DJ Koen',
+                      'DJ Koen',
                      'Als allround DJ draai ik o.a. genres als de 90s, top 40, feest- en
                     clubmuziek. Wekelijks draai ik op o.a. studentenfeesten, bruiloften, in
                     kroegen, clubs en meer.',
                      '90s, top 40, feest- en clubmuziek',
                      'https://www.facebook.com/DJKoenMossink/', '');
 INSERT INTO ARTIST (
-    ID, ARTIST_NAME, BIO, GENRE, LINK_MORE_INFO, PORTFOLIO)
+     ARTIST_NAME, BIO, GENRE, LINK_MORE_INFO, PORTFOLIO)
 VALUES (
-           4, 'C-Man',
+            'C-Man',
            '- 2nd place MNM Start To DJ 2016 - - Versuz - - Carré - - Sunrise
           Festival - - Ikon (Noxx) - - La Rocca - ... His First single ''Nothing is
           forever'' came out on 2Dutch (A music label from the Netherlands) in the
@@ -117,9 +117,9 @@ VALUES (
            'deephouse, EDM', 'https://www.facebook.com/cmandj/', 'Q-hotspot
 17/07/2020');
 INSERT INTO ARTIST (
-    ID, ARTIST_NAME, BIO, GENRE, LINK_MORE_INFO, PORTFOLIO)
+     ARTIST_NAME, BIO, GENRE, LINK_MORE_INFO, PORTFOLIO)
 VALUES (
-           5, 'Robbe Roels',
+            'Robbe Roels',
            'Wie Mechelen zegt zegt Robbe Roels, waar de 20-jarige dj 3 jaar geleden
           begon op kleine privé feestjes en gelegenheden draait hij nu elk weekend op
           de grootste fuiven in zijn regio. Al blijft het daar echter niet bij,
@@ -128,9 +128,9 @@ VALUES (
            'Allround, Dance, Techno', 'https://vi.be/platform/robberoels', 'Shake
 That Asspi 2020');
 INSERT INTO ARTIST (
-    ID, ARTIST_NAME, BIO, GENRE, LINK_MORE_INFO, PORTFOLIO)
+     ARTIST_NAME, BIO, GENRE, LINK_MORE_INFO, PORTFOLIO)
 VALUES (
-           6, 'Toloko',
+            'Toloko',
            'My name is Stan, also known as Toloko, the DJ who adds the right amount
           of loco-ness to your party! I am an upcoming DJ talent in the region of
           Zemst, Belgium. I started my career behind the turntables at the age of 20
@@ -139,15 +139,15 @@ VALUES (
           customized set and I introduce them to the latest tracks.',
            'house, r&b', 'https://www.toloko.be/', '');
 INSERT INTO ARTIST (
-    ID, ARTIST_NAME, BIO, GENRE, LINK_MORE_INFO, PORTFOLIO)
+     ARTIST_NAME, BIO, GENRE, LINK_MORE_INFO, PORTFOLIO)
 VALUES (
-           7, 'Tough Titty',
+            'Tough Titty',
            'A Belgian Tribute to 80''s Glam and Heavy Metal',
            '', 'https://www.facebook.com/Tough-Titty-277601302444865', '');
 INSERT INTO ARTIST (
-    ID, ARTIST_NAME, BIO, GENRE, LINK_MORE_INFO, PORTFOLIO)
+     ARTIST_NAME, BIO, GENRE, LINK_MORE_INFO, PORTFOLIO)
 VALUES (
-           8, 'Kryptonight',
+            'Kryptonight',
            'Twee kerels die er al vijf jaar van houden om het publiek uit hun dak
           te zien gaan! Onze missie: Het leven is een feest en daar moet gedanst
           worden. Hoe doen we dat? Met onze Latin-, Dancehall- en een vleugje
@@ -159,43 +159,43 @@ Festival Sunrise Festival Red ''n Blue Café Local Noxx Publik Vice Festival
 KdG TD ...');
 
 INSERT INTO PARTY
-(ID, name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
+( name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
  venue_Id)
-VALUES (1, 'Big Spring Party', 6, 10, '1 cocktail included',
+VALUES ( 'Big Spring Party', 6, 10, '1 cocktail included',
         '2025-03-21', '10:00', 1);
 INSERT INTO PARTY
-(ID, name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
+( name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
  venue_Id)
-VALUES (2, 'Liberty 2022', 4, 6, 'free vestiaire, viplounge',
+VALUES ( 'Liberty 2022', 4, 6, 'free vestiaire, viplounge',
         '2025-04-19', '22:00', 2);
 INSERT INTO PARTY
-(ID, name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
+( name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
  venue_Id)
-VALUES (3, 'Uppercuts', null, null, ' ',
+VALUES ( 'Uppercuts', null, null, ' ',
         '2022-03-16', '21:00', 4);
 INSERT INTO PARTY
-(ID, name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
+( name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
  venue_Id)
-VALUES (4, 'Zoetzuur', null, null, 'Zoete house / Zure techno',
+VALUES ( 'Zoetzuur', null, null, 'Zoete house / Zure techno',
         '2025-05-03', '21:00', 4);
 INSERT INTO PARTY
-(ID, name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
+( name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
  venue_Id)
-VALUES (5, 'Oldies but Goldies', null, null, 'afterparty@home van THE
+VALUES ( 'Oldies but Goldies', null, null, 'afterparty@home van THE
 BOX!',
         '2025-04-25', '21:00', 4);
 INSERT INTO PARTY
-(ID, name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
+( name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
  venue_Id)
-VALUES (6, 'Sapphire Soiree', 45, 45,
+VALUES ( 'Sapphire Soiree', 45, 45,
         'JCI Mechelen bestaat 45 jaar! En dat saffieren jubileum vieren we
        graag in stijl met een galabal in Kasteel Tivoli. En jij kan erbij zijn!',
         '2025-03-26', '21:00', 10);
-INSERT INTO party (id, name, price_Presale_In_Eur, price_In_Eur, extra_Info, date, doors, venue_Id)
-VALUES (7, 'Party Name', 10, 15, 'Some extra info', '2024-06-01', '20:00:00', 1);
+INSERT INTO party ( name, price_Presale_In_Eur, price_In_Eur, extra_Info, date, doors, venue_Id)
+VALUES ( 'Party Name', 10, 15, 'Some extra info', '2024-06-01', '20:00:00', 1);
 
-INSERT INTO party (id, name, price_Presale_In_Eur, price_In_Eur, extra_Info, date, doors, venue_id)
-VALUES (8, 'Summer Festival', 12, 18, 'Biggest summer party', '2024-08-15', '19:00:00', 1);
+INSERT INTO party ( name, price_Presale_In_Eur, price_In_Eur, extra_Info, date, doors, venue_id)
+VALUES ( 'Summer Festival', 12, 18, 'Biggest summer party', '2024-08-15', '19:00:00', 1);
 
 -- Tussenliggende tabel voor de Many-to-Many relatie tussen Animal en Party
 
@@ -209,14 +209,14 @@ INSERT INTO PARTY_ARTISTS (PARTIES_ID, ARTISTS_ID) VALUES (3, 5);
 INSERT INTO PARTY_ARTISTS (PARTIES_ID, ARTISTS_ID) VALUES (4, 5);
 
 -- Voeg 8 dieren toe aan de database
-INSERT INTO animal (id, animalname, city, bio) VALUES (1, 'Lion', 'Amsterdam', 'King of the Jungle');
-INSERT INTO animal (id, animalname, city, bio) VALUES (2, 'Eagle', 'Rotterdam', 'Sharp-sighted bird');
-INSERT INTO animal (id, animalname, city, bio) VALUES (3, 'Dolphin', 'Den Haag', 'Intelligent sea creature');
-INSERT INTO animal (id, animalname, city, bio) VALUES (4, 'Wolf', 'Utrecht', 'Loyal and wild hunter');
-INSERT INTO animal (id, animalname, city, bio) VALUES (5, 'Panda', 'Arnhem', 'Loves bamboo and sleeping');
-INSERT INTO animal (id, animalname, city, bio) VALUES (6, 'Kangaroo', 'Eindhoven', 'Jumps high and loves boxing');
-INSERT INTO animal (id, animalname, city, bio) VALUES (7, 'Owl', 'Groningen', 'Wise and nocturnal');
-INSERT INTO animal (id, animalname, city, bio) VALUES (8, 'Cheetah', 'Maastricht', 'Fastest land animal');
+INSERT INTO animal ( animalname, city, bio) VALUES ( 'Lion', 'Amsterdam', 'King of the Jungle');
+INSERT INTO animal ( animalname, city, bio) VALUES ( 'Eagle', 'Rotterdam', 'Sharp-sighted bird');
+INSERT INTO animal ( animalname, city, bio) VALUES ( 'Dolphin', 'Den Haag', 'Intelligent sea creature');
+INSERT INTO animal ( animalname, city, bio) VALUES ( 'Wolf', 'Utrecht', 'Loyal and wild hunter');
+INSERT INTO animal ( animalname, city, bio) VALUES ( 'Panda', 'Arnhem', 'Loves bamboo and sleeping');
+INSERT INTO animal ( animalname, city, bio) VALUES ( 'Kangaroo', 'Eindhoven', 'Jumps high and loves boxing');
+INSERT INTO animal ( animalname, city, bio) VALUES ( 'Owl', 'Groningen', 'Wise and nocturnal');
+INSERT INTO animal ( animalname, city, bio) VALUES (8 , 'Maastricht', 'Fastest land animal');
 
 INSERT INTO animal_parties (parties_id, animals_id) VALUES (1, 1);
 INSERT INTO animal_parties (parties_id, animals_id) VALUES (2, 2);

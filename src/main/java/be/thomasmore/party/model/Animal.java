@@ -1,9 +1,6 @@
 package be.thomasmore.party.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.Collection;
@@ -11,6 +8,7 @@ import java.util.Collection;
 @Entity
 public class Animal {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String animalname;
     private String city;

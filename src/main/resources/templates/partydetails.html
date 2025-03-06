@@ -14,6 +14,9 @@
     <a th:if="${nextid != null}" th:href="@{|/partydetails/${nextid}|}" class="btn btn-primary">
         Volgende →
     </a>
+    <a class="btn btn-primary" th:href="@{/admin/partyedit/{id}(id=${id})}">Edit</a>
+    <a class="btn btn-primary" th:href="@{/admin/partynew}">Create</a>
+
     <main class="m-3 container" th:object="${party}" th:if="${party}">
         <p th:text="|*{date} in |" th:href="@{|/venuedetails/*{venue.id}|}">
             <p th:text="*{venue.venueName}"></p>

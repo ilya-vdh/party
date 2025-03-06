@@ -7,6 +7,7 @@ import java.util.Collection;
 @Entity
 public class Artist {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String artistName;

@@ -10,6 +10,7 @@ import java.util.Collection;
 public class Party {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private Integer pricePresaleInEur;
